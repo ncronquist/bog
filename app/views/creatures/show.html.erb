@@ -1,6 +1,9 @@
 <h1>Show page for a Creature</h1>
 
-<%# @creature.inspect %>
+<% form_for(:creature, :url => creatures_path("id"), :html => {:method => :delete}) do  %>
+  <!-- email: <%# text_field_tag :mail %> -->
+  <%= submit_tag "Delete Creature" %>
+<% end %>
 
 <table class="table">
   <thead>
