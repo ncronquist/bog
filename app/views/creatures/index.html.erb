@@ -1,0 +1,12 @@
+<h1>Creatures List</h1>
+
+<% @creatures.each do |c| %>
+  <li>
+
+
+    <%= link_to(c) do %><strong><%= c.name %></strong><% end %> - <span><%= c.description %></span>
+
+  </li>
+<% end %>
+
+
