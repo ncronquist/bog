@@ -1,21 +1,31 @@
 <h1>Show page for a Creature</h1>
 
-<% form_for(:creature, :url => creatures_path("id"), :html => {:method => :delete}) do  %>
-  <!-- email: <%# text_field_tag :mail %> -->
-  <%= submit_tag "Delete Creature" %>
-<% end %>
+<div class="row">
+  <div class="col-xs-12 col-sm-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @creature.name %></td>
+          <td><%= @creature.description %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-2 col-sm-offset-4">
+    <%= link_to "Edit", edit_creature_path, :class => "btn btn-success" %>
+  </div>
+  <div class="col-sm-2">
+    <%= form_for(@creature, :html => { :method => :delete }) do |f| %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</div>
 
-<table class="tab le">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @creature.name %></td>
-      <td><%= @creature.description %></td>
-    </tr>
-  </tbody>
-</table>
