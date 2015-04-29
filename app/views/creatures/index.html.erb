@@ -1,12 +1,27 @@
 <h1>Creatures List</h1>
 
-<% @creatures.each do |c| %>
-  <li>
-
-
-    <%= link_to(c) do %><strong><%= c.name %></strong><% end %> - <span><%= c.description %></span>
-
-  </li>
-<% end %>
+<div class="row">
+  <div class="col-xs-12 col-sm-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @creatures.each do |c| %>
+          <tr>
+            <td><%= link_to c.name, c %></td>
+            <td>
+              <%= link_to '', edit_creature_path(id: c[:id]), :class => "btn btn-success glyphicon glyphicon-pencil" %>
+              <%= link_to '', c, :method => "delete", :class => "btn btn-danger glyphicon glyphicon-remove" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 

@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @creature do |f| %>
+<%= f.text_field :name, :placeholder => "Enter a name" %>
+<%= f.text_field :description, :placeholder => "Enter a description" %>
+<%= f.collection_check_boxes :tag_ids, @tags, :id, :name %>
+<%= f.primary %>
+<% end %>
