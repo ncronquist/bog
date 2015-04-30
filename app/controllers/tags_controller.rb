@@ -35,7 +35,11 @@ class TagsController < ApplicationController
       @tag.destroy
       redirect_to :tags
     else
-      flash[:danger] = "Cannot delete this tag because there is/are #{@tag.creatures.length} creature(s) using it."
+      # flash[:danger] = "Cannot delete this tag because there is/are #{@tag.creatures.length} creature(s) using it."
+      @tag.creatures.each do |c|
+        c.tags.delete(@tag)
+      end
+      @tag.destroy
       redirect_to :tags
     end
   end
