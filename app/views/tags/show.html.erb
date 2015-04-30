@@ -1,0 +1,22 @@
+<h1><small>Creatures Tagged: </small><%= @tag.name %></h1>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Creature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @creatures.each do |c| %>
+          <tr>
+            <td><%= link_to c.name, c %></td>
+            <td><%= c.description %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

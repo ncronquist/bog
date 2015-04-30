@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :creatures
+  resources :tags
 
   # Example resource route with options:
   #   resources :products do

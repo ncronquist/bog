@@ -46,6 +46,8 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form> -->
         <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Tags", tags_path %></li>
+          <li><%= link_to "Add Tag", new_tag_path %></li>
           <li><%= link_to "Creatures", creatures_path %></li>
           <li><%= link_to "Add Creature", new_creature_path %></li>
 
@@ -62,7 +64,7 @@
       </div><!-- /.navbar-collapse -->
     </nav>
 
-
+    <%= render "layouts/flash" %>
 
     <%= yield %>
 
